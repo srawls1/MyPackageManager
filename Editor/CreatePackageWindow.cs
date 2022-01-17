@@ -103,7 +103,7 @@ public class CreatePackageWindow : EditorWindow
 
     #endregion // Properties
 
-    [MenuItem("Window/Create Package")]
+    [MenuItem("Window/My Package Manager/Create Package")]
     public static void ShowWindow()
     {
         GetWindow(typeof(CreatePackageWindow));
