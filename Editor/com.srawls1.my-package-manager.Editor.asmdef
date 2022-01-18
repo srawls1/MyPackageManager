@@ -1,5 +1,5 @@
 {
-    "name": "com.srawls1.MyPackageManager.Editor",
+    "name": "com.srawls1.my-package-manager.Editor",
     "rootNamespace": "",
     "references": [],
     "includePlatforms": [],

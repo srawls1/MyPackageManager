@@ -1,5 +1,5 @@
 {
-    "name": "com.srawls1.MyPackageManager",
+    "name": "com.srawls1.my-package-manager",
     "version": "1.0.0",
     "author": "Spencer Rawls",
     "description": "This is a small package with two custom editor tools:\n1. [Create Package] Creating a template for a new UPM package.\n2. [Import my packages] Choose from my other UPM packages to quickly and easily import them.",

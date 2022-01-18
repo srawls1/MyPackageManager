@@ -8,20 +8,17 @@ using UnityEditor;
 
 public class CreatePackageWindow : EditorWindow
 {
-    private string m_packageName = "MyPackage";
+    private string m_packageName = "my-package";
     private string m_displayName = "My Package";
-    private string m_fullPackageName = "com.srawls1.MyPackage";
+    private string m_fullPackageName = "com.srawls1.my-package";
     private string m_author = "Spencer Rawls";
     private string m_description = "Fill me in!";
 
-    private static readonly Regex SPACE_OR_PUNCTUATION = new Regex("[\\s\\p{P}]+");
+    private static readonly Regex SPACE_OR_PUNCTUATION = new Regex("[\\s\\.,;:'\"`~\\!@#$%^&\\*()[\\]{}\\\\|+=<>/?]");
 
     private static readonly string[] allowedTLDs =
     {
-        "com",
-        "org",
-        "net",
-        "cool" // just cause
+        "com"
     };
 
     #region Properties
@@ -31,7 +28,7 @@ public class CreatePackageWindow : EditorWindow
         get { return m_packageName; }
         set
         {
-            m_packageName = SPACE_OR_PUNCTUATION.Replace(value, string.Empty);
+            m_packageName = SPACE_OR_PUNCTUATION.Replace(value.ToLower(), string.Empty);
         }
     }
 
@@ -62,7 +59,7 @@ public class CreatePackageWindow : EditorWindow
 
             for (int i = 1; i < parts.Count - 1; ++i)
             {
-                parts[i] = SPACE_OR_PUNCTUATION.Replace(parts[i], string.Empty);
+                parts[i] = SPACE_OR_PUNCTUATION.Replace(parts[i].ToLower(), string.Empty);
             }
 
             if (!string.Equals(parts[parts.Count - 1], packageName))
