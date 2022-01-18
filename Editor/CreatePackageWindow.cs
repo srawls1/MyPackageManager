@@ -180,7 +180,7 @@ public class CreatePackageWindow : EditorWindow
 
     private void WritePackageManifest(string baseFolderPath)
     {
-        object manifest = new PackageManifest(packageName, author, description, displayName);
+        object manifest = new PackageManifest(fullPackageName, author, description, displayName);
 
         using (StreamWriter writer = File.CreateText(Path.Combine(baseFolderPath, "package.json")))
         {
@@ -204,7 +204,7 @@ public class CreatePackageWindow : EditorWindow
             writer.WriteLine();
             writer.WriteLine("You can import this package into your project by adding the following line into the `dependencies` section of your project manifest:");
             writer.WriteLine();
-            writer.WriteLine(string.Format("```\"{0}\": \"https://github.com/{1}/{2}\"```", fullPackageName, githubUser, packageName));
+            writer.WriteLine(string.Format("```\"{0}\": \"https://github.com/{1}/{2}.git\"```", fullPackageName, githubUser, packageName));
         }
     }
 

@@ -123,8 +123,8 @@ public class ImportPackagesWindow : EditorWindow
 
     private static MyPackageInfo[] packages =
     {
-        new MyPackageInfo("Core Library", "https://github.com/srawls1/Core"),
-        new MyPackageInfo("Hitboxes", "https://github.com/srawls1/HitBoxes")
+        new MyPackageInfo("Core Library", "https://github.com/srawls1/Core.git"),
+        new MyPackageInfo("Hitboxes", "https://github.com/srawls1/HitBoxes.git")
     };
 
     private ListRequest listRequest;
