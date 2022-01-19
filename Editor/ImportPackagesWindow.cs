@@ -1,10 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEditor;
 using UnityEditor.PackageManager;
 using UnityEditor.PackageManager.Requests;
-using System.Linq;
 
 public class ImportPackagesWindow : EditorWindow
 {
@@ -123,7 +121,7 @@ public class ImportPackagesWindow : EditorWindow
 
     private static MyPackageInfo[] packages =
     {
-        new MyPackageInfo("Core Library", "https://github.com/srawls1/Core.git"),
+        new MyPackageInfo("Core Library", "https://github.com/srawls1/core.git"),
         new MyPackageInfo("Hitboxes", "https://github.com/srawls1/HitBoxes.git")
     };
 
