@@ -109,7 +109,11 @@ public class ImportPackagesWindow : EditorWindow
                 if (listRequest.Status == StatusCode.Success)
                 {
                     isLoading = false;
-                    isLoaded = listRequest.Result.Any((package) => package.name.Equals(githubUrl));
+                    isLoaded = listRequest.Result.Any((package) =>
+                    {
+                        Debug.Log(package.name);
+                        return package.name.Equals(githubUrl);
+                    });
                 }
                 else
                 {
