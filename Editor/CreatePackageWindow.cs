@@ -166,7 +166,12 @@ public class CreatePackageWindow : EditorWindow
             this.author = author;
             this.description = description;
             this.displayName = displayName;
-            this.unity = Application.unityVersion;
+
+            string fullUnityVersion = Application.unityVersion;
+            string[] versionParts = fullUnityVersion.Split('.');
+            string unityMajorVersion = versionParts[0] + "." + versionParts[1];
+
+            this.unity = unityMajorVersion;
             this.dependencies = new Dependencies();
         }
     }
