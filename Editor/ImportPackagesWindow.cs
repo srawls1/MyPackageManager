@@ -9,6 +9,7 @@ public class ImportPackagesWindow : EditorWindow
     private class MyPackageInfo
     {
         public readonly string displayName;
+        public readonly string packageName;
         public readonly string githubUrl;
 
         private AddRequest addRequest;
@@ -18,9 +19,10 @@ public class ImportPackagesWindow : EditorWindow
         public bool isLoaded { get; private set; }
         public bool isLoading { get; private set; }
 
-        public MyPackageInfo(string displayName, string githubUrl)
+        public MyPackageInfo(string displayName, string packageName, string githubUrl)
         {
             this.displayName = displayName;
+            this.packageName = packageName;
             this.githubUrl = githubUrl;
             isLoaded = false;
             isLoading = false;
@@ -109,11 +111,7 @@ public class ImportPackagesWindow : EditorWindow
                 if (listRequest.Status == StatusCode.Success)
                 {
                     isLoading = false;
-                    isLoaded = listRequest.Result.Any((package) =>
-                    {
-                        Debug.Log(package.name);
-                        return package.name.Equals(githubUrl);
-                    });
+                    isLoaded = listRequest.Result.Any((package) => package.name.Equals(packageName));
                 }
                 else
                 {
@@ -125,8 +123,8 @@ public class ImportPackagesWindow : EditorWindow
 
     private static MyPackageInfo[] packages =
     {
-        new MyPackageInfo("Core Library", "https://github.com/srawls1/core.git"),
-        new MyPackageInfo("Hitboxes", "https://github.com/srawls1/HitBoxes.git")
+        new MyPackageInfo("Core Library", "com.srawls1.core", "https://github.com/srawls1/core.git"),
+        new MyPackageInfo("Hitboxes", "com.srawls1.hitboxes", "https://github.com/srawls1/HitBoxes.git")
     };
 
     private ListRequest listRequest;
