@@ -47,7 +47,7 @@ public class ImportPackagesWindow : EditorWindow
                 return;
             }
 
-            removeRequest = Client.Remove(githubUrl);
+            removeRequest = Client.Remove(packageName);
             EditorApplication.update += RemoveProgress;
             isLoading = true;
         }
