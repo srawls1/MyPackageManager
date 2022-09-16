@@ -124,7 +124,8 @@ public class ImportPackagesWindow : EditorWindow
     private static MyPackageInfo[] packages =
     {
         new MyPackageInfo("Core Library", "com.srawls1.core", "https://github.com/srawls1/core.git"),
-        new MyPackageInfo("Hitboxes", "com.srawls1.hitboxes", "https://github.com/srawls1/HitBoxes.git")
+        new MyPackageInfo("Hitboxes", "com.srawls1.hitboxes", "https://github.com/srawls1/HitBoxes.git"),
+        new MyPackageInfo("Character Controllers", "com.srawls1.character-controller", "https://github.com/srawls1/character-controllers.git")
     };
 
     private ListRequest listRequest;
