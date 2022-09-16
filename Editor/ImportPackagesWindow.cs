@@ -151,20 +151,16 @@ public class ImportPackagesWindow : EditorWindow
             {
                 EditorGUILayout.LabelField("Loading...");
             }
-            else if (packages[i].isLoaded)
+            if (packages[i].isLoaded)
+			{
+                EditorGUILayout.LabelField("Loaded!");
+			}
+
+            if (GUILayout.Button("Add"))
             {
-                if (GUILayout.Button("Remove"))
-                {
-                    packages[i].Remove();
-                }
+                packages[i].Add();
             }
-            else
-            {
-                if (GUILayout.Button("Add"))
-                {
-                    packages[i].Add();
-                }
-            }
+            
             EditorGUILayout.EndHorizontal();
         }
         EditorGUILayout.EndVertical();
